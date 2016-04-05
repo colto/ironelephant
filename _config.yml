@@ -1,15 +1,15 @@
 # Site settings
 title: Iron Elephant Tattoo
-email: coltomatic@gmail.com
+email: ironelephanttattoo@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-twitter_username: FittyFent
-github_username: Colto
+instagram_name: ironelephanttattoo
+phone: (541) 617-8722
 
 # Build settings
 markdown: kramdown
 
 gems: ['kramdown']
-exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile', 'vendor']
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile', 'vendor/bundle']
