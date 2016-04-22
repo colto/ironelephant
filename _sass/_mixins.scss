@@ -55,6 +55,16 @@
 	}
 }
 
+@mixin lobster-font()
+{
+  font-family: 'Lobster','Helvetica Neue', cursive;
+}
+
+@mixin kaushan-font()
+{
+  font-family: 'Kaushan Script','Helvetica Neue', cursive;
+}
+
 @mixin sans-serif-font()
 {
 	font-family: 'Helvetica Neue', 'Open Sans', Arial, sans-serif;
