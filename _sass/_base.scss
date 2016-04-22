@@ -46,6 +46,21 @@ p {
   padding: 50px;
 }
 
+#contact {
+  p {
+    @include lobster-font;
+  }
+}
+
+#about {
+  p {
+    @include sans-serif-font;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+}
+
 .bg-primary {
     background-color: $theme-primary;
     a,p {
