@@ -268,3 +268,238 @@ and the repository exists.
   INFO [e3f23ddc] Running /usr/bin/env echo "Branch master (at c82af2e4371715ace49ceb48dbc4c3297c4ee0fb) deployed as release 20160727210216 by Colton" >> /srv/www/ironelephant/revisions.log as root@138.68.13.73
  DEBUG [e3f23ddc] Command: cd /srv/www/ironelephant/releases && /usr/bin/env echo "Branch master (at c82af2e4371715ace49ceb48dbc4c3297c4ee0fb) deployed as release 20160727210216 by Colton" >> /srv/www/ironelephant/revisions.log
   INFO [e3f23ddc] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-15 08:15:06 -0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [631c3804] Running /usr/bin/env mkdir -p /tmp as root@138.68.13.73
+ DEBUG [631c3804] Command: /usr/bin/env mkdir -p /tmp
+  INFO [631c3804] Finished in 0.970 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ironelephant-production-Colton.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ironelephant-production-Colton.sh 100.0%
+  INFO [0c2a6437] Running /usr/bin/env chmod 700 /tmp/git-ssh-ironelephant-production-Colton.sh as root@138.68.13.73
+ DEBUG [0c2a6437] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ironelephant-production-Colton.sh
+  INFO [0c2a6437] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [7ed77789] Running /usr/bin/env git ls-remote --heads git@github.com:colto/ironelephant as root@138.68.13.73
+ DEBUG [7ed77789] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git ls-remote --heads git@github.com:colto/ironelephant )
+ DEBUG [7ed77789] 	ba18e2cbe4dc70419ce01ffa67bc9e1ee8ef0aa7	refs/heads/master
+  INFO [7ed77789] Finished in 1.459 seconds with exit status 0 (successful).
+  INFO [38414dd9] Running /usr/bin/env mkdir -p /srv/www/ironelephant/shared /srv/www/ironelephant/releases as root@138.68.13.73
+ DEBUG [38414dd9] Command: /usr/bin/env mkdir -p /srv/www/ironelephant/shared /srv/www/ironelephant/releases
+  INFO [38414dd9] Finished in 0.113 seconds with exit status 0 (successful).
+ DEBUG [1a5d4299] Running [ -f /srv/www/ironelephant/current/REVISION ] as root@138.68.13.73
+ DEBUG [1a5d4299] Command: [ -f /srv/www/ironelephant/current/REVISION ]
+ DEBUG [1a5d4299] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [72c21cdb] Running /usr/bin/env cat /srv/www/ironelephant/current/REVISION 2>/dev/null as root@138.68.13.73
+ DEBUG [72c21cdb] Command: /usr/bin/env cat /srv/www/ironelephant/current/REVISION 2>/dev/null
+ DEBUG [72c21cdb] 	c82af2e4371715ace49ceb48dbc4c3297c4ee0fb
+ DEBUG [72c21cdb] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [df0a1364] Running [ -f /srv/www/ironelephant/repo/HEAD ] as root@138.68.13.73
+ DEBUG [df0a1364] Command: [ -f /srv/www/ironelephant/repo/HEAD ]
+ DEBUG [df0a1364] Finished in 0.107 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /srv/www/ironelephant/repo
+ DEBUG [96694a84] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [96694a84] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [96694a84] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [044bc4b9] Running /usr/bin/env git remote update --prune as root@138.68.13.73
+ DEBUG [044bc4b9] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [044bc4b9] 	Fetching origin
+ DEBUG [044bc4b9] 	From github.com:colto/ironelephant
+   c82af2e..ba18e2c  master     -> master
+  INFO [044bc4b9] Finished in 1.617 seconds with exit status 0 (successful).
+ DEBUG [a43398b5] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [a43398b5] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [a43398b5] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [73ad50be] Running /usr/bin/env mkdir -p /srv/www/ironelephant/releases/20160815151510 as root@138.68.13.73
+ DEBUG [73ad50be] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env mkdir -p /srv/www/ironelephant/releases/20160815151510 )
+  INFO [73ad50be] Finished in 0.114 seconds with exit status 0 (successful).
+  INFO [969423e0] Running /usr/bin/env git archive master | tar -x -f - -C /srv/www/ironelephant/releases/20160815151510 as root@138.68.13.73
+ DEBUG [969423e0] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git archive master | tar -x -f - -C /srv/www/ironelephant/releases/20160815151510 )
+  INFO [969423e0] Finished in 0.180 seconds with exit status 0 (successful).
+ DEBUG [1fc1bd9e] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [1fc1bd9e] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [1fc1bd9e] Finished in 0.104 seconds with exit status 0 (successful).
+ DEBUG [1d6d1d54] Running /usr/bin/env git rev-list --max-count=1 master as root@138.68.13.73
+ DEBUG [1d6d1d54] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1d6d1d54] 	ba18e2cbe4dc70419ce01ffa67bc9e1ee8ef0aa7
+ DEBUG [1d6d1d54] Finished in 0.103 seconds with exit status 0 (successful).
+ DEBUG [9886d546] Running if test ! -d /srv/www/ironelephant/releases/20160815151510; then echo "Directory does not exist '/srv/www/ironelephant/releases/20160815151510'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [9886d546] Command: if test ! -d /srv/www/ironelephant/releases/20160815151510; then echo "Directory does not exist '/srv/www/ironelephant/releases/20160815151510'" 1>&2; false; fi
+ DEBUG [9886d546] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [1855cbad] Running /usr/bin/env echo "ba18e2cbe4dc70419ce01ffa67bc9e1ee8ef0aa7" >> REVISION as root@138.68.13.73
+ DEBUG [1855cbad] Command: cd /srv/www/ironelephant/releases/20160815151510 && /usr/bin/env echo "ba18e2cbe4dc70419ce01ffa67bc9e1ee8ef0aa7" >> REVISION
+  INFO [1855cbad] Finished in 0.107 seconds with exit status 0 (successful).
+  INFO [6baf5d34] Running /usr/bin/env ln -s /srv/www/ironelephant/releases/20160815151510 /srv/www/ironelephant/releases/current as root@138.68.13.73
+ DEBUG [6baf5d34] Command: /usr/bin/env ln -s /srv/www/ironelephant/releases/20160815151510 /srv/www/ironelephant/releases/current
+  INFO [6baf5d34] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [b522ff1b] Running /usr/bin/env mv /srv/www/ironelephant/releases/current /srv/www/ironelephant as root@138.68.13.73
+ DEBUG [b522ff1b] Command: /usr/bin/env mv /srv/www/ironelephant/releases/current /srv/www/ironelephant
+  INFO [b522ff1b] Finished in 0.104 seconds with exit status 0 (successful).
+ DEBUG [7e64f385] Running /usr/bin/env ls -xtr /srv/www/ironelephant/releases as root@138.68.13.73
+ DEBUG [7e64f385] Command: /usr/bin/env ls -xtr /srv/www/ironelephant/releases
+ DEBUG [7e64f385] 	20160727204853	20160727205839	20160727210216	20160815151510
+ DEBUG [7e64f385] Finished in 0.107 seconds with exit status 0 (successful).
+ DEBUG [a3e6f85b] Running if test ! -d /srv/www/ironelephant/releases; then echo "Directory does not exist '/srv/www/ironelephant/releases'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [a3e6f85b] Command: if test ! -d /srv/www/ironelephant/releases; then echo "Directory does not exist '/srv/www/ironelephant/releases'" 1>&2; false; fi
+ DEBUG [a3e6f85b] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO [a8effa56] Running /usr/bin/env echo "Branch master (at ba18e2cbe4dc70419ce01ffa67bc9e1ee8ef0aa7) deployed as release 20160815151510 by Colton" >> /srv/www/ironelephant/revisions.log as root@138.68.13.73
+ DEBUG [a8effa56] Command: cd /srv/www/ironelephant/releases && /usr/bin/env echo "Branch master (at ba18e2cbe4dc70419ce01ffa67bc9e1ee8ef0aa7) deployed as release 20160815151510 by Colton" >> /srv/www/ironelephant/revisions.log
+  INFO [a8effa56] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-15 08:22:16 -0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1ea78a80] Running /usr/bin/env mkdir -p /tmp as root@138.68.13.73
+ DEBUG [1ea78a80] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1ea78a80] Finished in 0.783 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ironelephant-production-Colton.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ironelephant-production-Colton.sh 100.0%
+  INFO [fdc13aa0] Running /usr/bin/env chmod 700 /tmp/git-ssh-ironelephant-production-Colton.sh as root@138.68.13.73
+ DEBUG [fdc13aa0] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ironelephant-production-Colton.sh
+  INFO [fdc13aa0] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO [97640654] Running /usr/bin/env git ls-remote --heads git@github.com:colto/ironelephant as root@138.68.13.73
+ DEBUG [97640654] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git ls-remote --heads git@github.com:colto/ironelephant )
+ DEBUG [97640654] 	32dca9432b5f066c6ca106d0b5c68bc8ace262fa	refs/heads/master
+  INFO [97640654] Finished in 1.203 seconds with exit status 0 (successful).
+  INFO [b7ac79c8] Running /usr/bin/env mkdir -p /srv/www/ironelephant/shared /srv/www/ironelephant/releases as root@138.68.13.73
+ DEBUG [b7ac79c8] Command: /usr/bin/env mkdir -p /srv/www/ironelephant/shared /srv/www/ironelephant/releases
+  INFO [b7ac79c8] Finished in 0.107 seconds with exit status 0 (successful).
+ DEBUG [9f5067a9] Running [ -f /srv/www/ironelephant/current/REVISION ] as root@138.68.13.73
+ DEBUG [9f5067a9] Command: [ -f /srv/www/ironelephant/current/REVISION ]
+ DEBUG [9f5067a9] Finished in 0.100 seconds with exit status 0 (successful).
+ DEBUG [bc6c02b4] Running /usr/bin/env cat /srv/www/ironelephant/current/REVISION 2>/dev/null as root@138.68.13.73
+ DEBUG [bc6c02b4] Command: /usr/bin/env cat /srv/www/ironelephant/current/REVISION 2>/dev/null
+ DEBUG [bc6c02b4] 	ba18e2cbe4dc70419ce01ffa67bc9e1ee8ef0aa7
+ DEBUG [bc6c02b4] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [60ee96f0] Running [ -f /srv/www/ironelephant/repo/HEAD ] as root@138.68.13.73
+ DEBUG [60ee96f0] Command: [ -f /srv/www/ironelephant/repo/HEAD ]
+ DEBUG [60ee96f0] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /srv/www/ironelephant/repo
+ DEBUG [8d9393f1] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [8d9393f1] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [8d9393f1] Finished in 0.107 seconds with exit status 0 (successful).
+  INFO [3c476fd8] Running /usr/bin/env git remote update --prune as root@138.68.13.73
+ DEBUG [3c476fd8] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [3c476fd8] 	Fetching origin
+ DEBUG [3c476fd8] 	From github.com:colto/ironelephant
+   ba18e2c..32dca94  master     -> master
+  INFO [3c476fd8] Finished in 1.311 seconds with exit status 0 (successful).
+ DEBUG [5c41ca0f] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [5c41ca0f] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [5c41ca0f] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [0d6ba115] Running /usr/bin/env mkdir -p /srv/www/ironelephant/releases/20160815152220 as root@138.68.13.73
+ DEBUG [0d6ba115] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env mkdir -p /srv/www/ironelephant/releases/20160815152220 )
+  INFO [0d6ba115] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [a9f6a878] Running /usr/bin/env git archive master | tar -x -f - -C /srv/www/ironelephant/releases/20160815152220 as root@138.68.13.73
+ DEBUG [a9f6a878] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git archive master | tar -x -f - -C /srv/www/ironelephant/releases/20160815152220 )
+  INFO [a9f6a878] Finished in 0.168 seconds with exit status 0 (successful).
+ DEBUG [dbd41c36] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [dbd41c36] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [dbd41c36] Finished in 0.104 seconds with exit status 0 (successful).
+ DEBUG [892eed71] Running /usr/bin/env git rev-list --max-count=1 master as root@138.68.13.73
+ DEBUG [892eed71] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [892eed71] 	32dca9432b5f066c6ca106d0b5c68bc8ace262fa
+ DEBUG [892eed71] Finished in 0.103 seconds with exit status 0 (successful).
+ DEBUG [516dbbe9] Running if test ! -d /srv/www/ironelephant/releases/20160815152220; then echo "Directory does not exist '/srv/www/ironelephant/releases/20160815152220'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [516dbbe9] Command: if test ! -d /srv/www/ironelephant/releases/20160815152220; then echo "Directory does not exist '/srv/www/ironelephant/releases/20160815152220'" 1>&2; false; fi
+ DEBUG [516dbbe9] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [9d981d74] Running /usr/bin/env echo "32dca9432b5f066c6ca106d0b5c68bc8ace262fa" >> REVISION as root@138.68.13.73
+ DEBUG [9d981d74] Command: cd /srv/www/ironelephant/releases/20160815152220 && /usr/bin/env echo "32dca9432b5f066c6ca106d0b5c68bc8ace262fa" >> REVISION
+  INFO [9d981d74] Finished in 0.106 seconds with exit status 0 (successful).
+  INFO [e0b4dfc2] Running /usr/bin/env ln -s /srv/www/ironelephant/releases/20160815152220 /srv/www/ironelephant/releases/current as root@138.68.13.73
+ DEBUG [e0b4dfc2] Command: /usr/bin/env ln -s /srv/www/ironelephant/releases/20160815152220 /srv/www/ironelephant/releases/current
+  INFO [e0b4dfc2] Finished in 0.098 seconds with exit status 0 (successful).
+  INFO [b5f43dcb] Running /usr/bin/env mv /srv/www/ironelephant/releases/current /srv/www/ironelephant as root@138.68.13.73
+ DEBUG [b5f43dcb] Command: /usr/bin/env mv /srv/www/ironelephant/releases/current /srv/www/ironelephant
+  INFO [b5f43dcb] Finished in 0.105 seconds with exit status 0 (successful).
+ DEBUG [4806ea1d] Running /usr/bin/env ls -xtr /srv/www/ironelephant/releases as root@138.68.13.73
+ DEBUG [4806ea1d] Command: /usr/bin/env ls -xtr /srv/www/ironelephant/releases
+ DEBUG [4806ea1d] 	20160727204853	20160727205839	20160727210216	20160815151510	20160815152220
+ DEBUG [4806ea1d] Finished in 0.107 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on 138.68.13.73
+  INFO No old releases (keeping newest 5) on 138.68.13.73
+ DEBUG [d489c535] Running if test ! -d /srv/www/ironelephant/releases; then echo "Directory does not exist '/srv/www/ironelephant/releases'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [d489c535] Command: if test ! -d /srv/www/ironelephant/releases; then echo "Directory does not exist '/srv/www/ironelephant/releases'" 1>&2; false; fi
+ DEBUG [d489c535] Finished in 0.105 seconds with exit status 0 (successful).
+  INFO [858ebc46] Running /usr/bin/env echo "Branch master (at 32dca9432b5f066c6ca106d0b5c68bc8ace262fa) deployed as release 20160815152220 by Colton" >> /srv/www/ironelephant/revisions.log as root@138.68.13.73
+ DEBUG [858ebc46] Command: cd /srv/www/ironelephant/releases && /usr/bin/env echo "Branch master (at 32dca9432b5f066c6ca106d0b5c68bc8ace262fa) deployed as release 20160815152220 by Colton" >> /srv/www/ironelephant/revisions.log
+  INFO [858ebc46] Finished in 0.107 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-15 08:23:36 -0700 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [865d4281] Running /usr/bin/env mkdir -p /tmp as root@138.68.13.73
+ DEBUG [865d4281] Command: /usr/bin/env mkdir -p /tmp
+  INFO [865d4281] Finished in 0.765 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-ironelephant-production-Colton.sh 0.0%
+  INFO Uploading /tmp/git-ssh-ironelephant-production-Colton.sh 100.0%
+  INFO [fe024067] Running /usr/bin/env chmod 700 /tmp/git-ssh-ironelephant-production-Colton.sh as root@138.68.13.73
+ DEBUG [fe024067] Command: /usr/bin/env chmod 700 /tmp/git-ssh-ironelephant-production-Colton.sh
+  INFO [fe024067] Finished in 0.112 seconds with exit status 0 (successful).
+  INFO [9337e653] Running /usr/bin/env git ls-remote --heads git@github.com:colto/ironelephant as root@138.68.13.73
+ DEBUG [9337e653] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git ls-remote --heads git@github.com:colto/ironelephant )
+ DEBUG [9337e653] 	628a4db1137cd883963e1e6c1e5b5eb00b23c4b1	refs/heads/master
+  INFO [9337e653] Finished in 1.220 seconds with exit status 0 (successful).
+  INFO [c4c81597] Running /usr/bin/env mkdir -p /srv/www/ironelephant/shared /srv/www/ironelephant/releases as root@138.68.13.73
+ DEBUG [c4c81597] Command: /usr/bin/env mkdir -p /srv/www/ironelephant/shared /srv/www/ironelephant/releases
+  INFO [c4c81597] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [b25b0f3f] Running [ -f /srv/www/ironelephant/current/REVISION ] as root@138.68.13.73
+ DEBUG [b25b0f3f] Command: [ -f /srv/www/ironelephant/current/REVISION ]
+ DEBUG [b25b0f3f] Finished in 0.122 seconds with exit status 0 (successful).
+ DEBUG [886a91fb] Running /usr/bin/env cat /srv/www/ironelephant/current/REVISION 2>/dev/null as root@138.68.13.73
+ DEBUG [886a91fb] Command: /usr/bin/env cat /srv/www/ironelephant/current/REVISION 2>/dev/null
+ DEBUG [886a91fb] 	32dca9432b5f066c6ca106d0b5c68bc8ace262fa
+ DEBUG [886a91fb] Finished in 0.112 seconds with exit status 0 (successful).
+ DEBUG [51caffed] Running [ -f /srv/www/ironelephant/repo/HEAD ] as root@138.68.13.73
+ DEBUG [51caffed] Command: [ -f /srv/www/ironelephant/repo/HEAD ]
+ DEBUG [51caffed] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /srv/www/ironelephant/repo
+ DEBUG [c7e12584] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [c7e12584] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [c7e12584] Finished in 0.115 seconds with exit status 0 (successful).
+  INFO [4e3c1f77] Running /usr/bin/env git remote update --prune as root@138.68.13.73
+ DEBUG [4e3c1f77] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4e3c1f77] 	Fetching origin
+ DEBUG [4e3c1f77] 	From github.com:colto/ironelephant
+   32dca94..628a4db  master     -> master
+  INFO [4e3c1f77] Finished in 1.280 seconds with exit status 0 (successful).
+ DEBUG [fecaa943] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [fecaa943] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [fecaa943] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO [6429e0bd] Running /usr/bin/env mkdir -p /srv/www/ironelephant/releases/20160815152340 as root@138.68.13.73
+ DEBUG [6429e0bd] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env mkdir -p /srv/www/ironelephant/releases/20160815152340 )
+  INFO [6429e0bd] Finished in 0.105 seconds with exit status 0 (successful).
+  INFO [c2b6c500] Running /usr/bin/env git archive master | tar -x -f - -C /srv/www/ironelephant/releases/20160815152340 as root@138.68.13.73
+ DEBUG [c2b6c500] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git archive master | tar -x -f - -C /srv/www/ironelephant/releases/20160815152340 )
+  INFO [c2b6c500] Finished in 0.168 seconds with exit status 0 (successful).
+ DEBUG [17c33d0c] Running if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [17c33d0c] Command: if test ! -d /srv/www/ironelephant/repo; then echo "Directory does not exist '/srv/www/ironelephant/repo'" 1>&2; false; fi
+ DEBUG [17c33d0c] Finished in 0.103 seconds with exit status 0 (successful).
+ DEBUG [43a2cba5] Running /usr/bin/env git rev-list --max-count=1 master as root@138.68.13.73
+ DEBUG [43a2cba5] Command: cd /srv/www/ironelephant/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-ironelephant-production-Colton.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [43a2cba5] 	628a4db1137cd883963e1e6c1e5b5eb00b23c4b1
+ DEBUG [43a2cba5] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [4c736dde] Running if test ! -d /srv/www/ironelephant/releases/20160815152340; then echo "Directory does not exist '/srv/www/ironelephant/releases/20160815152340'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [4c736dde] Command: if test ! -d /srv/www/ironelephant/releases/20160815152340; then echo "Directory does not exist '/srv/www/ironelephant/releases/20160815152340'" 1>&2; false; fi
+ DEBUG [4c736dde] Finished in 0.113 seconds with exit status 0 (successful).
+  INFO [d9748426] Running /usr/bin/env echo "628a4db1137cd883963e1e6c1e5b5eb00b23c4b1" >> REVISION as root@138.68.13.73
+ DEBUG [d9748426] Command: cd /srv/www/ironelephant/releases/20160815152340 && /usr/bin/env echo "628a4db1137cd883963e1e6c1e5b5eb00b23c4b1" >> REVISION
+  INFO [d9748426] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [28544985] Running /usr/bin/env ln -s /srv/www/ironelephant/releases/20160815152340 /srv/www/ironelephant/releases/current as root@138.68.13.73
+ DEBUG [28544985] Command: /usr/bin/env ln -s /srv/www/ironelephant/releases/20160815152340 /srv/www/ironelephant/releases/current
+  INFO [28544985] Finished in 0.108 seconds with exit status 0 (successful).
+  INFO [d6e4d359] Running /usr/bin/env mv /srv/www/ironelephant/releases/current /srv/www/ironelephant as root@138.68.13.73
+ DEBUG [d6e4d359] Command: /usr/bin/env mv /srv/www/ironelephant/releases/current /srv/www/ironelephant
+  INFO [d6e4d359] Finished in 0.104 seconds with exit status 0 (successful).
+ DEBUG [804480a6] Running /usr/bin/env ls -xtr /srv/www/ironelephant/releases as root@138.68.13.73
+ DEBUG [804480a6] Command: /usr/bin/env ls -xtr /srv/www/ironelephant/releases
+ DEBUG [804480a6] 	20160727204853	20160727205839	20160727210216	20160815151510	20160815152220
+20160815152340
+ DEBUG [804480a6] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 138.68.13.73
+  INFO [4f74ab59] Running /usr/bin/env rm -rf /srv/www/ironelephant/releases/20160727204853 as root@138.68.13.73
+ DEBUG [4f74ab59] Command: /usr/bin/env rm -rf /srv/www/ironelephant/releases/20160727204853
+  INFO [4f74ab59] Finished in 0.107 seconds with exit status 0 (successful).
+ DEBUG [985ed64a] Running if test ! -d /srv/www/ironelephant/releases; then echo "Directory does not exist '/srv/www/ironelephant/releases'" 1>&2; false; fi as root@138.68.13.73
+ DEBUG [985ed64a] Command: if test ! -d /srv/www/ironelephant/releases; then echo "Directory does not exist '/srv/www/ironelephant/releases'" 1>&2; false; fi
+ DEBUG [985ed64a] Finished in 0.110 seconds with exit status 0 (successful).
+  INFO [77d0c926] Running /usr/bin/env echo "Branch master (at 628a4db1137cd883963e1e6c1e5b5eb00b23c4b1) deployed as release 20160815152340 by Colton" >> /srv/www/ironelephant/revisions.log as root@138.68.13.73
+ DEBUG [77d0c926] Command: cd /srv/www/ironelephant/releases && /usr/bin/env echo "Branch master (at 628a4db1137cd883963e1e6c1e5b5eb00b23c4b1) deployed as release 20160815152340 by Colton" >> /srv/www/ironelephant/revisions.log
+  INFO [77d0c926] Finished in 0.102 seconds with exit status 0 (successful).
