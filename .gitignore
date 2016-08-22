@@ -1,4 +1,5 @@
-*log
+*.log
+log/
 .sass-cache/
 .bundle
 vendor/bundle
