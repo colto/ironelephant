@@ -11,5 +11,5 @@ phone: (541) 617-8722
 # Build settings
 markdown: kramdown
 
-gems: ['kramdown']
+gems: ['kramdown','jekyll-sitemap']
 exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile', 'vendor/bundle']
